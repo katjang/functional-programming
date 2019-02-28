@@ -57,7 +57,7 @@ convert.mod10 = function(str){
     var sepValues = convert.separateAllValues(array);
     var arrays = convert.splitAndComplementPerTenValues(sepValues);
 
-    var mod10Array = convert.mod10AddArrayRecursive(arrays, 2, convert.mod10AddArray(arrays[0], arrays[1]));
+    var mod10Array = convert.mod10AddArrayRecursive(arrays, 1, convert.mod10AddArray(arrays[0], arrays[1]));
 
     return mod10Array.join('');
 };

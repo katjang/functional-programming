@@ -12,8 +12,7 @@
     "mocha": "^6.0.2"
   },
   "scripts": {
-    "test": "mocha",
-    "generate": "./cli.js"
+    "test": "mocha"
   },
   "author": "",
   "license": "ISC"
