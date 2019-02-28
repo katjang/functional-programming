@@ -1,0 +1,20 @@
+{
+  "name": "functional-programming",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "js-sha256": "^0.9.0",
+    "mocha": "^6.0.2"
+  },
+  "scripts": {
+    "test": "mocha",
+    "generate": "./cli.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
