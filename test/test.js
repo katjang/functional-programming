@@ -31,6 +31,14 @@ describe('splitAndComplementTenValues', function() {
     });
 });
 
+describe('mod10AddArrayRecursive', function() {
+    it('recursively adds%10 all values of every array', function() {
+        var arrays = [[1, 1, 6, 1, 0, 1, 1, 2, 0, 1], [1, 6, 0, 1, 2, 3, 4, 5, 6, 7]];
+        convert.mod10AddArrayRecursive(arrays, 2, convert.mod10AddArray(arrays[0], arrays[1]))
+        assert.deepEqual(convert.mod10AddArrayRecursive(arrays, 2, convert.mod10AddArray(arrays[0], arrays[1])), [2, 7, 6, 2, 2, 4, 5, 7, 6, 8]);
+    });
+});
+
 describe('mod10', function() {
     it('successfully converts into a mod10 string', function() {
         assert.equal(convert.mod10("text"), "2762245768");
