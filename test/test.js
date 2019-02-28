@@ -38,7 +38,7 @@ describe('mod10', function() {
 });
 
 describe('Sha256', function() {
-    it('successfully encrypts the output message', function() {
+    it('successfully encrypts the output message in SHA256', function() {
         assert.equal(sha256('2762245768'), "d0b3cb0cc9100ef243a1023b2a129d15c28489e387d3f8b687a7299afb4b5079");
     });
 });

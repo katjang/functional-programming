@@ -45,15 +45,19 @@ convert.mod10AddArray = function(ar1, ar2){
     return newArray;
 };
 
+convert.mod10AddArrayRecursive = function(arrays, index, previousArray){
+    if(arrays[index+1] == undefined){
+        return previousArray;
+    }
+    return convert.mod10AddArrayRecursive(arrays, index+1, convert.mod10AddArray(arrays[index+1], previousArray));
+};
+
 convert.mod10 = function(str){
     var array = convert.textToASCIArray(convert.withoutSpaces(str));
     var sepValues = convert.separateAllValues(array);
-    var blocks = convert.splitAndComplementPerTenValues(sepValues);
+    var arrays = convert.splitAndComplementPerTenValues(sepValues);
 
-    var mod10Array = convert.mod10AddArray(blocks[0], blocks[1]);
-    for(var i = 2; i < blocks.length; i ++){
-        mod10Array = convert.mod10AddArray(mod10Array, blocks[i]);
-    }
+    var mod10Array = convert.mod10AddArrayRecursive(arrays, 2, convert.mod10AddArray(arrays[0], arrays[1]));
 
     return mod10Array.join('');
 };
