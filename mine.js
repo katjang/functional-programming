@@ -7,9 +7,10 @@ var found = false;
 
 axios.get('http://145.24.222.232:8000/api/blockchain/next').then(function(res){
     var response = res['data'];
-    var previous = response['blockchain']['data'][0];
-    var newBlock = response['transactions'][0];
     if(response['open']){
+        var previous = response['blockchain']['data'][0];
+        var newBlock = response['transactions'][0];
+
         var str = response['blockchain']['hash'] + previous['from'] + previous['to'] + previous['amount'] + previous['timestamp'] + response['blockchain']['timestamp'] + response['blockchain']['nonce'];
         console.log(str);
         var hashed = convert.generateValidHash(str);
